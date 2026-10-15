@@ -1,9 +1,23 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
-    <title>CNG - LADJH_GIStool</title>
+    <title>Digital Divides and Data Justice in Los Angeles | Christian Nielsen Garcia</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Digital divides, digital rights, and data justice in Los Angeles, with maps of digital access and demographics in LA County." />
+    <meta name="author" content="Christian Nielsen Garcia" />
+    <link rel="canonical" href="https://chris-t-n-g.github.io/ladjh_gis.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Christian Nielsen Garcia" />
+    <meta property="og:title" content="Digital Divides and Data Justice in Los Angeles | Christian Nielsen Garcia" />
+    <meta property="og:description" content="Digital divides, digital rights, and data justice in Los Angeles, with maps of digital access and demographics in LA County." />
+    <meta property="og:url" content="https://chris-t-n-g.github.io/ladjh_gis.html" />
+    <meta property="og:image" content="https://chris-t-n-g.github.io/images/LADJH_home_screenshot.png" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Digital Divides and Data Justice in Los Angeles | Christian Nielsen Garcia" />
+    <meta name="twitter:description" content="Digital divides, digital rights, and data justice in Los Angeles, with maps of digital access and demographics in LA County." />
+    <meta name="twitter:image" content="https://chris-t-n-g.github.io/images/LADJH_home_screenshot.png" />
     <link rel="stylesheet" href="assets/css/minimal.css" />
     <style>
         /* Single-column content page (the shared stylesheet defaults to a two-column layout) */
@@ -104,7 +118,7 @@
         <div>
             <section id="one">
                 <a href="https://communityengagement.ucla.edu/programs/los-angeles-data-justice-hub/" class="gis-banner">
-                    <img src="images/LADJH_home_screenshot.png" alt="" data-position="center center" />
+                    <img src="images/LADJH_home_screenshot.png" alt="Los Angeles Data Justice Hub homepage" data-position="center center" />
                 </a>
                 <header>
                     <h1>Understanding the Two Digital Divides, Digital Rights, and Data Justice in Los Angeles</h1>
@@ -134,10 +148,10 @@
                     <p>A widely used framework for discussing the evolution of Digital Divide discourse is Paul Attewell’s two-level description of the Digital Divide (Attewell 2001). This framework complicates the early critique of digital inequalities, which previously saw access and adoption as unquestioned improvements. Attewell highlighted that even when access is available, disparities in skills and opportunities persist. He termed access-related inequalities as the "First Digital Divide" and described subsequent disparities in usage, skills, and the benefits gained from digital access as the "Second Digital Divide."</p>
                     <p>Regarding the First Digital Divide, various studies have shown that limitations to access align with demographic factors linked to structural inequities. Census data from Los Angeles reveals that, while digital device adoption and internet access have improved over time, demographic disparities persist. For instance, a multivariate linear regression of 2022 ACS data shows that lower-income households, often with higher representation of people of color, still experience less digital access compared to wealthier, predominantly white families in LA County.</p>
                     <div class="image-container">
-                        <img src="images/olsCumul.png" alt="Digital Divide Image 1">
-                        <img src="images/olsRace.png" alt="Digital Divide Image 2">
-                        <img src="images/olsClass.png" alt="Digital Divide Image 3">
-                        <img src="images/olsGener.png" alt="Digital Divide Image 4">
+                        <img src="images/olsCumul.png" alt="Chart of cumulative digital access in LA County">
+                        <img src="images/olsRace.png" alt="Chart of digital access by race in LA County">
+                        <img src="images/olsClass.png" alt="Chart of digital access by class in LA County">
+                        <img src="images/olsGener.png" alt="Chart of digital access by generation in LA County">
                     </div>
                     <p>Interestingly, generational data reveals that Gen X and Boomer households tend to have more access than younger generations like Gen Z and Millennials, contradicting earlier findings that younger populations were more likely to adopt digital technologies. This is likely influenced by mediating factors such as income class, with wealthier families, who tend to have fewer children, experiencing greater access overall. Nevertheless, income and class remain significant moderators of access at the county level.</p>
                     <h3>LA Digital Divide Map</h3>
@@ -155,9 +169,9 @@
                     <p>Of course, the census faces controversies, often reproducing inequities through its simplified representations of diverse populations into predetermined numerical and nominal categories—a process known as datafication. For a more in-depth discussion, please visit our Ethics section.</p>
                     <p>To collect ACS data, I used Python to query the ACS API, starting with requests for variable names and descriptions to navigate the often confusing Census Variable Naming System.</p>
                     <p>Variable names typically begin with a letter prefix indicating the data type, followed by numbers and suffixes for specific characteristics. For example, B28002_001E represents the total estimate (E) for computer ownership from table B28002. This system ensures consistency across datasets and facilitates efficient data processing.</p>
-                    <img src="images/censusTableV.png" alt="api" class="single-image">
+                    <img src="images/censusTableV.png" alt="Census table of variable names" class="single-image">
                     <p>My research focused on demographic features (wealth, race, ethnicity, sex, generation) for a specific geographical region (LA County), resulting in the following API call.</p>
-                    <img src="images/apiCall.png" alt="api" class="single-image">
+                    <img src="images/apiCall.png" alt="Census API request for LA County demographics" class="single-image">
                     <p>In my case, the data points on age were overly granular, leading me to represent wealth through relative class categories (e.g., Upper Class, Upper-Middle Class) rather than numerical figures. I subsequently cleaned and transformed my data tables. To replicate this process, you can follow these transformations:</p>
                     <li>[list of transformations]</li>
                     <li>[Screenshot of transformations]</li>
@@ -224,10 +238,10 @@
     <footer id="footer">
         <div class="inner">
             <ul class="icons">
-                <li><a href="https://twitter.com/ChrisTN29" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="https://www.linkedin.com/in/christianthomasnielsengarcia/" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
-                <li><a href="https://medium.com/@ChrisTN29/" title="Medium"><i class="fab fa-medium"></i></a></li>
-                <li><a href="https://scholar.google.com/citations?user=ilWxXUYAAAAJ&hl=en" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a></li>
+                <li><a href="https://twitter.com/ChrisTN29" title="Twitter" rel="me"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/christianthomasnielsengarcia/" title="LinkedIn" rel="me"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="https://medium.com/@ChrisTN29/" title="Medium" rel="me"><i class="fab fa-medium"></i></a></li>
+                <li><a href="https://scholar.google.com/citations?user=ilWxXUYAAAAJ&hl=en" title="Google Scholar" rel="me"><i class="fas fa-graduation-cap"></i></a></li>
             </ul>
             <ul class="copyright">
                 <li>&copy; 2024 Christian T. Nielsen Garcia</li>

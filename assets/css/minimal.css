@@ -1014,6 +1014,7 @@ section:last-child {
     margin-bottom: 0;
 }
 
+.side-panel h1,
 .side-panel h2,
 .side-panel p {
     color: #000000;

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chris-t-n-g.github.io/sitemap.xml
