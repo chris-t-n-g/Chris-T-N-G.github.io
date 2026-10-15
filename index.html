@@ -3,7 +3,7 @@
 <head>
     <title>Christian Nielsen Garcia | UCLA Information Studies</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Ph.D. student in Information Studies at UCLA researching how disagreement, conflict, and dialogue shape group decision-making, problem-solving, and coordination." />
     <meta name="author" content="Christian Nielsen Garcia" />
     <link rel="canonical" href="https://chris-t-n-g.github.io/" />
@@ -73,7 +73,7 @@
         </header>
 
         <!-- Main -->
-        <div id="main" class="has-side-panel">
+        <main id="main" class="has-side-panel">
 
             <!-- Left Column -->
             <div class="side-panel">
@@ -81,7 +81,7 @@
                 <section class="profile-section">
                     <div class="profile-image-container">
                         <!-- Profile Image -->
-                        <img src="images/UCLA_HS_CNG.JPG" alt="Christian Nielsen Garcia" class="profile-image" />
+                        <img src="images/UCLA_HS_CNG.webp" alt="Christian Nielsen Garcia" class="profile-image" width="150" height="150" fetchpriority="high" />
                         
                         <!-- Name -->
                         <h1 class="profile-name">Christian Nielsen Garcia</h1>
@@ -143,9 +143,8 @@
                     <!-- Stays hidden until Research & Academia finishes typing itself out (assets/js/type-effects.js),
                          then appears; click its heading to type the text below. The paragraphs hold the real text
                          so it still reads fine with JS off (see the noscript rule). -->
-                    <h2 id="who-i-am-toggle" class="centered-header who-i-am-toggle" role="button" tabindex="0"
-                        aria-controls="who-i-am-body" aria-expanded="false" onclick="typeWhoIAm()"
-                        onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); typeWhoIAm(); }">WHO I AM</h2>
+                    <h2 class="centered-header"><button type="button" id="who-i-am-toggle" class="who-i-am-toggle"
+                        aria-controls="who-i-am-body" aria-expanded="false" onclick="typeWhoIAm()">WHO I AM</button></h2>
                     <div id="who-i-am-body" class="who-i-am-body">
                         <p>I was raised in Madrid, with a Danish dad and a Peruvian mom, in an American household. My multicultural perspective might have influenced my interest in the importance of difference in the process of how groups think.</p>
                         <p>I moved to California, chasing surf, sailing, and I guess the water writ large. Outside of research, I am very much into bodybuilding, long-distance running, and increasingly gymnastics and calisthenics. (I also drink mucho milk)</p>
@@ -157,7 +156,7 @@
             </section>
             </div>
 
-        </div>
+        </main>
 
         <!-- News Ticker (items are loaded from news_updates.csv by assets/js/news-ticker.js; the spans below are only a fallback if that fails) -->
         <div id="news-ticker">

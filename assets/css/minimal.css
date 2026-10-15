@@ -966,7 +966,7 @@ section:last-child {
 }
 
 #footer .icons a {
-    color: #666666;
+    color: #8a8a8a;
     font-size: 1.2rem;
     transition: color 0.2s ease;
 }
@@ -977,7 +977,7 @@ section:last-child {
 
 #footer .copyright {
     list-style: none;
-    color: #666666;
+    color: #8a8a8a;
     font-size: 0.9rem;
 }
 
@@ -1390,7 +1390,7 @@ section:last-child {
 .side-panel .degrees-section + .degrees-section .degrees-list p {
     font-size: 0.72rem;
     line-height: 1.3;
-    color: #777777;
+    color: #595959;
 }
 
 /* Very short windows: trim the last few pixels so the panel still fits */
@@ -1713,6 +1713,14 @@ section:last-child {
     cursor: pointer;
     display: inline-block;
     width: 100%;
+    font: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    text-align: center;
+    background: none;
+    appearance: none;
+    box-sizing: border-box;
+    margin: 0;
     /* Barely-there outline hints it's clickable; fades away once it's been revealed */
     border: 1px solid rgba(255, 255, 255, 0.18);
     padding: 0.3em 0.6em;
