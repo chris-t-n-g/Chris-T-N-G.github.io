@@ -1678,6 +1678,52 @@ section:last-child {
     letter-spacing: 0.1em;
 }
 
+.scriptura-dropdown {
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+}
+
+.scriptura-dropdown > summary {
+    text-transform: none;
+    letter-spacing: 0.04em;
+}
+
+.scriptura-body {
+    border-left-color: #555555;
+}
+
+.scriptura-blurb {
+    color: #bbbbbb;
+    font-size: 0.95rem;
+    font-style: italic;
+    margin-bottom: 1.75rem;
+}
+
+.scriptura-post {
+    max-width: 42rem;
+}
+
+.scriptura-date {
+    display: block;
+    color: #999999;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+}
+
+.scriptura-post p {
+    color: #dddddd;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 1.1rem;
+}
+
+.scriptura-post p:last-child {
+    margin-bottom: 0;
+    color: #bbbbbb;
+}
+
 /* Longer tab label: keep the three tabs on one line on phones */
 @media screen and (max-width: 480px) {
     #header nav a {
