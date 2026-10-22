@@ -157,7 +157,7 @@
 
                 <!-- CV Section -->
                 <section>
-                    <button type="button" class="cv-open-button" onclick="openCV()">CV</button>
+                    <button type="button" class="cv-open-button" onclick="openCV()">CV <span class="cv-cookie-label">(Cookie Consent)</span></button>
                 </section>
 
             </div>
@@ -258,7 +258,7 @@
             <button type="button" class="cv-close" onclick="closeCV()" aria-label="Close">&times;</button>
             <h2 id="cv-dialog-title" class="cv-title">CV</h2>
             <div id="cv-consent-container">
-                <p>To view the CV, please accept analytics cookies used to measure site visits and CV views. You can decline and leave without viewing the CV, or accept to continue.</p>
+                <p>To view the CV, please accept <strong>analytics cookies</strong> used to measure site visits and CV views. You can decline and leave without viewing the CV, or accept to continue.</p>
                 <div class="cv-consent-buttons">
                     <button type="button" onclick="acceptCvConsent()">Accept and view CV</button>
                     <button type="button" class="cv-consent-decline" onclick="declineCvConsent()">Decline</button>

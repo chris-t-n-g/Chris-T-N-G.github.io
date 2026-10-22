@@ -1427,10 +1427,20 @@ section:last-child {
     font-size: 0.9rem;
 }
 
+.cv-open-button .cv-cookie-label {
+    font-weight: 400;
+    opacity: 0.85;
+    margin-left: 0.15em;
+}
+
 .cv-open-button:hover,
 .cv-open-button:focus-visible {
     background: #ffffff;
     color: #000000;
+}
+
+.cv-box #cv-consent-container strong {
+    font-weight: 700;
 }
 
 /* CV dialog: the verification box, opened in the middle of the page */
