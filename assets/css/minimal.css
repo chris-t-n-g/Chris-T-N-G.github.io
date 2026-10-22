@@ -1469,6 +1469,29 @@ section:last-child {
     margin-bottom: 1rem;
 }
 
+.cv-consent-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 1.25rem;
+}
+
+.cv-consent-buttons button {
+    width: 100%;
+}
+
+.cv-box button.cv-consent-decline {
+    background: #ffffff;
+    color: #000000;
+    border: 1px solid #c8c8c8;
+}
+
+.cv-box button.cv-consent-decline:hover {
+    background: #000000;
+    color: #ffffff;
+    border-color: #000000;
+}
+
 .cv-box #verification-container input[type="text"] {
     background: #ffffff;
     color: #000000;

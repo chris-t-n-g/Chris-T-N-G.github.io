@@ -1,14 +1,32 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BB8J8GRV73"></script>
+    <!-- Google tag (gtag.js) — analytics cookies stay off until CV consent -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        analytics_storage: 'denied',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        wait_for_update: 500
+      });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BB8J8GRV73"></script>
+    <script>
       gtag('js', new Date());
-
       gtag('config', 'G-BB8J8GRV73');
+      try {
+        if (localStorage.getItem('cv_analytics_consent') === 'granted') {
+          gtag('consent', 'update', {
+            analytics_storage: 'granted',
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied'
+          });
+        }
+      } catch (e) {}
     </script>
     <title>Publications | Christian Nielsen Garcia</title>
     <meta charset="utf-8" />
@@ -239,14 +257,21 @@
         <div id="cv-box" class="cv-box" role="dialog" aria-modal="true" aria-labelledby="cv-dialog-title">
             <button type="button" class="cv-close" onclick="closeCV()" aria-label="Close">&times;</button>
             <h2 id="cv-dialog-title" class="cv-title">CV</h2>
-            <div id="verification-container">
+            <div id="cv-consent-container">
+                <p>To view the CV, please accept analytics cookies used to measure site visits and CV views. You can decline and leave without viewing the CV, or accept to continue.</p>
+                <div class="cv-consent-buttons">
+                    <button type="button" onclick="acceptCvConsent()">Accept and view CV</button>
+                    <button type="button" class="cv-consent-decline" onclick="declineCvConsent()">Decline</button>
+                </div>
+            </div>
+            <div id="verification-container" style="display:none;">
                 <p>Please enter your full name and check the box to view the CV:</p>
                 <input type="text" id="full-name" placeholder="Enter your full name">
                 <div>
                     <input type="checkbox" id="demo-human" name="demo-human">
                     <label for="demo-human">I am a human</label>
                 </div>
-                <button onclick="checkVerification()">View CV</button>
+                <button type="button" onclick="checkVerification()">View CV</button>
             </div>
             <div id="cv-actions" style="display:none;">
                 <div class="cv-buttons">

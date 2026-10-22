@@ -1,11 +1,15 @@
-/* CV dialog: verification, inline preview, print / download / maximize.
+/* CV dialog: analytics consent, verification, inline preview, print / download / maximize.
 
    Where the PDF comes from:
    - Deployed site: the GitHub Actions workflow copies the PDF in Curriculum/ to Curriculum/current.pdf.
    - Local preview (e.g. Live Server): current.pdf doesn't exist, so the folder listing is read instead
-     and the PDF found in Curriculum/ is used. */
+     and the PDF found in Curriculum/ is used.
+
+   Analytics cookies (Google Consent Mode) stay denied until the visitor accepts in this dialog.
+   The typed name is never sent to Analytics. */
 (function () {
     var STABLE_URL = 'Curriculum/current.pdf';
+    var CONSENT_KEY = 'cv_analytics_consent';
     var cvUrlPromise = null;
 
     function exists(url) {
@@ -43,6 +47,45 @@
 
     function byId(id) { return document.getElementById(id); }
 
+    function hasAnalyticsConsent() {
+        try {
+            return localStorage.getItem(CONSENT_KEY) === 'granted';
+        } catch (e) {
+            return false;
+        }
+    }
+
+    function grantAnalyticsConsent() {
+        try {
+            localStorage.setItem(CONSENT_KEY, 'granted');
+        } catch (e) {}
+        if (typeof gtag === 'function') {
+            gtag('consent', 'update', {
+                analytics_storage: 'granted',
+                ad_storage: 'denied',
+                ad_user_data: 'denied',
+                ad_personalization: 'denied'
+            });
+            gtag('event', 'cv_view');
+        }
+    }
+
+    function showConsentStep() {
+        var consent = byId('cv-consent-container');
+        var verify = byId('verification-container');
+        if (consent) consent.style.display = 'block';
+        if (verify) verify.style.display = 'none';
+    }
+
+    function showVerificationStep() {
+        var consent = byId('cv-consent-container');
+        var verify = byId('verification-container');
+        if (consent) consent.style.display = 'none';
+        if (verify) verify.style.display = 'block';
+        var name = byId('full-name');
+        if (name) name.focus();
+    }
+
     function showPreview() {
         var frame = byId('cv-preview');
         var msg = byId('cv-preview-msg');
@@ -59,12 +102,25 @@
 
     window.openCV = function () {
         byId('cv-modal').style.display = 'flex';
-        var name = byId('full-name');
-        if (name && byId('verification-container').style.display !== 'none') name.focus();
+        if (hasAnalyticsConsent()) {
+            showVerificationStep();
+            if (typeof gtag === 'function') gtag('event', 'cv_view');
+        } else {
+            showConsentStep();
+        }
     };
 
     window.closeCV = function () {
         byId('cv-modal').style.display = 'none';
+    };
+
+    window.acceptCvConsent = function () {
+        grantAnalyticsConsent();
+        showVerificationStep();
+    };
+
+    window.declineCvConsent = function () {
+        window.closeCV();
     };
 
     window.checkVerification = function () {
