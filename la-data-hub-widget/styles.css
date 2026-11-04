@@ -656,3 +656,72 @@ body {
         font-size: 24px;
     }
 }
+
+/* Research & Public Scholarship article previews */
+.scholarship-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.scholarship-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    overflow: hidden;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.scholarship-card:hover {
+    border-color: var(--ucla-blue);
+    background: rgba(39, 116, 174, 0.12);
+}
+
+.scholarship-card-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.scholarship-preview {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: top left;
+    background: #f5f1ea;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.scholarship-card-body {
+    padding: 1rem 1.1rem 1.2rem;
+}
+
+.scholarship-source {
+    margin: 0 0 0.4rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ucla-blue);
+}
+
+.scholarship-title {
+    margin: 0 0 0.45rem;
+    font-size: 1.05rem;
+    line-height: 1.35;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.scholarship-dek {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+@media screen and (max-width: 900px) {
+    .scholarship-gallery {
+        grid-template-columns: 1fr;
+    }
+}
